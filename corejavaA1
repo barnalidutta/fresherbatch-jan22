@@ -1,0 +1,409 @@
+public class Armstrong {
+
+	public static void main(String[] args) {
+		int num = 153, actual_num, rem;
+		int res = 0;
+		actual_num = num;
+		while (actual_num !=0)
+		{
+			rem = actual_num % 10;
+			res = res + rem*rem*rem;
+			
+		}
+		if (res == num)
+			System.out.println(num + " is an Armstrong number ");
+		else
+			System.out.println(num + " is not an Armstrong number ");
+	}
+
+}
+Output:
+153 is an Armstrong number
+
+
+public class ArmstrongRange {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i, n, sum, div;
+		for(i=100; i<=999; i++)
+		{
+			n=i;
+			div = 0;
+			sum = 0;
+			while( n>0)
+			{
+				div = n%10;
+				sum = sum + (div * div * div);
+				n = n / 10;
+			}
+			if (i==sum)
+				System.out.println(i+ " is Armstrong number");
+	
+	}
+		}}	
+Output:
+153 is Armstrong number
+370 is Armstrong number
+371 is Armstrong number
+407 is Armstrong number
+
+
+package program3;
+import java.util.Scanner;
+import java.lang.math;
+public class simple {
+	 public static void main(String[] args) {
+		 Scanner input = new Scanner(System.in);
+		    int n=153;
+		    System.out.print(n+"is the principle");
+
+		    System.out.print("Enter the rate: ");
+		    double rate = input.nextDouble();
+		    System.out.print("Enter the time: ");
+		    double time = input.nextDouble();
+		    System.out.print("Enter number of times interest is compounded: ");
+		    int number = input.nextInt();
+
+		    double interest = (n * time * rate) / 100;
+		    double amount = n *Math.pow(1 + (rate /number), time * number);
+            double compund = amount-n;
+		    System.out.println("Principal: " + n);
+		    System.out.println("Interest Rate: " + rate);
+		    System.out.println("Time Duration: " + time);
+		    System.out.println("Simple Interest: " + interest);
+		    System.out.println("amount:"+ amount);
+		    System.out.println("coumpound" + compund);
+		    
+
+		    input.close();
+		  }
+		}
+Output:
+153is the principleEnter the rate: 2
+Enter the time: 1
+Enter number of times interest is compounded: 1
+Principal: 153
+Interest Rate: 2.0
+Time Duration: 1.0
+Simple Interest: 3.06
+amount:459.0
+coumpound306.0
+
+
+
+import java.util.Scanner;
+public class Marks {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your Marks of Subject 1: ");
+		int marks1 = sc.nextInt();
+		System.out.println("Enter your Marks of Subject 2: ");
+		int marks2 = sc.nextInt();
+		System.out.println("Enter your Marks of Subject 3: ");
+		int marks3 = sc.nextInt();
+		
+		if((marks1>60)&&(marks2>60)&&(marks3>60))
+		{
+			System.out.println("Passed");
+		}
+		else if (((marks1>60)&&(marks2>60))||((marks2>60)&&(marks3>60))||((marks1>60)&&(marks3>60)))
+		{
+			System.out.println("Promoted");
+		}
+		else if ((marks1>60)||(marks2>60)||(marks3>60))
+		{ 
+			System.out.println("Failed");
+		}
+		else
+		{
+			System.out.println("Failed");
+		}
+	}
+}
+
+Output:
+Enter your Marks of Subject 1: 
+65
+Enter your Marks of Subject 2: 
+89
+Enter your Marks of Subject 3: 
+12
+Promoted
+
+
+
+import java.util.Scanner;
+public class TaxAmount {
+
+	public static void main(String[] args) {
+		int ctc;
+		double tax;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the ctc ");
+		ctc = sc.nextInt();
+		if(ctc<=180000)
+		{
+			tax = 0;
+			System.out.println("Slab A's " + tax + " is the display Tax Amount");
+		}
+		else if((ctc>=181001)&&(ctc<=300000))
+		{
+			tax = (ctc/100)*10;
+			System.out.println("Slab B's " + tax + " is the display Tax Amount");
+		}
+		else if((ctc>=300001)&&(ctc<=500000))
+		{
+			tax =(ctc/100)*20;
+			System.out.println("Slab C's " + tax + " is the display Tax Amount");
+		}
+		else if((ctc>=500001)&&(ctc<=1000000))
+		{
+			tax = (ctc/100)*30;
+			System.out.println("Slab D's " + tax + " is the display Tax Amount");
+		}
+		else 
+		{
+			System.out.println("Wrong Input");
+		}
+	}
+
+}
+
+Output:
+Enter the ctc 
+400000
+Slab C's 80000.0 is the display Tax Amount
+
+
+
+
+
+import java.util.Scanner;
+
+public class LoginUser {
+
+	public static void main(String[] args) {
+		String uname, pwd;
+		int count = 0, atmp;
+		
+		while(count<3)
+		{
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the login name : ");
+			uname = sc.nextLine();
+			System.out.println("Enter password : ");
+			pwd = sc.nextLine();
+			
+	if(uname.equals("Ritambhara") && pwd.equals("chatterjee"))
+			{
+				System.out.println("Welcome Ritambhara");
+			}
+			else
+			{
+				count++;
+			atmp = 3 – count;
+System.out.println("Try Again. Remaining attempts " + atmp);
+				
+			If(atmp == 0)
+			{	
+			System.out.println("Contact Admin");
+		}}}
+	}
+}
+Output:
+Enter the login name : 
+Admin
+Enter password : 
+Admin@1
+Welcome Admin
+
+
+
+
+import java.util.Scanner;
+public class LinearSearch {
+
+	public static void main(String[] args) {
+		int i,n,s,arr[];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of elements");
+		n = sc.nextInt();
+		arr = new int[n];
+		
+		System.out.println("Enter the " + n + " elements");
+		for(i=0;i<n;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		System.out.println("Enter the search value");
+		s = sc.nextInt();
+		
+		for(i=0;i<n;i++)
+		{
+			if(arr[i]==s)
+			{
+				System.out.println(s + " is present");
+				break;
+			}
+		}
+		if(i==n)
+			System.out.println(s + " is not present");
+			
+	}
+
+}
+
+Output:
+Enter number of elements
+15
+Enter the 15 elements
+5
+12
+14
+6
+78
+19
+1
+23
+26
+35
+37
+7
+52
+86
+47
+Enter the search value
+19
+19 is present
+
+
+
+
+public class BubbleSort {
+	static void bubblesort(int[]arr) {
+		int n = arr.length;
+		int temp = 0;
+		for (int i = 0; i<n; i++)
+		{
+			for(int j = 1; j<(n-i); j++) 
+			{
+				if(arr[j-1] > arr[j])
+				{
+					temp = arr[j-1];
+					arr[j-1] = arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+		}
+
+	public static void main(String[] args) {
+		int arr[]= {23,78,9,12,56,34,55};
+		System.out.println("Array Before Bubble Sort");
+		 for(int i = 0; i < arr.length; i++)
+			{
+			System.out.println(arr[i] + " ");
+			}
+		System.out.println();
+		
+		bubblesort(arr);
+		System.out.println("array After Bubble Sort");
+		   for(int i=0; i<arr.length;i++) {
+			System.out.println(arr[i] + " ");
+		}
+		}
+
+}
+ 
+Output: 
+Array Before Bubble Sort
+23
+78
+9
+12
+56
+34
+55
+array After Bubble Sort
+9
+12
+23
+34
+55
+56
+78
+
+
+
+
+import java.util.Scanner;
+public class AverageMarks {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a[][] = new int[3][3];
+		int i, j;
+		int total = 0; 
+		System.out.println("Enter the marks ");
+		for (i=0;i<3;i++) 
+		{
+		for (j=0;j<3;j++) 
+		{
+		a[i][j]=sc.nextInt() ;
+		}
+		}
+		for (i=0;i<3;i++) 
+		{
+		for (j=0;j<3;j++) 
+		{
+		total=total+a[i][j];
+		}}
+		System. out. println("Total marks in all subjects is: "+ total);
+		System. out. println("Average marks in all subjects is: "+ total/9) ;
+		total = 0;
+		for (i=0;i<3;i++) 
+		{
+			total=0;
+		for (j=0;j<3;j++) 
+		{
+		total=total+a[i][j];
+		}
+		System.out.println();
+		System. out. println("Total marks for each student is: "+ total) ;
+		System. out. println("Average marks for each student is: "+ total/3);
+		System.out.println();
+		total = 0;
+	}
+	}
+}
+
+Output: 
+Enter the marks 
+25
+65
+78
+78
+12
+69
+35
+75
+14
+Total marks in all subjects is: 451
+Average marks in all subjects is: 50
+
+Total marks for each student is: 168
+Average marks for each student is: 56
+
+
+Total marks for each student is: 159
+Average marks for each student is: 53
+
+
+Total marks for each student is: 124
+Average marks for each student is: 41
+
+
+
+
