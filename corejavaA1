@@ -1,3 +1,8 @@
+1.Find out if the given number is an Armstrong number.
+Logic : - if 153 is the supplied value, the  (1^3)+(5^3)+(3^3)=1+125+27=153
+This is the same as supplied value hence it is an Armstrong number.
+
+
 public class Armstrong {
 
 	public static void main(String[] args) {
@@ -20,6 +25,9 @@ public class Armstrong {
 Output:
 153 is an Armstrong number
 
+
+
+2.Find out all the Armstrong numbers falling in the range of 100-999
 
 public class ArmstrongRange {
 
@@ -48,6 +56,9 @@ Output:
 371 is Armstrong number
 407 is Armstrong number
 
+
+
+3.Find out the simple as well as compound interest of supplied value.
 
 package program3;
 import java.util.Scanner;
@@ -91,6 +102,11 @@ amount:459.0
 coumpound306.0
 
 
+4.Supply marks of three subject and declare the result, result declaration is based on below conditions.
+Condition 1: All subjects marks are greater than 60 is Passed.
+Condition 2: Any two subjects marks are greater than 60 is Promoted.
+Condition 3: Any one subject marks is greater than 60 or all subjects marks less than 60 is failed.
+
 
 import java.util.Scanner;
 public class Marks {
@@ -133,6 +149,8 @@ Enter your Marks of Subject 3:
 Promoted
 
 
+5.	Calculate the income tax on the basis of the following table.
+Note: Assume slab is consider for Male, Female as well as Senior Citizen.
 
 import java.util.Scanner;
 public class TaxAmount {
@@ -177,7 +195,9 @@ Enter the ctc
 Slab C's 80000.0 is the display Tax Amount
 
 
-
+6.	Consider a CUI based application, where you are asking a user to enter his Logic name and password, after entering the
+valid user-id and password it will print the message “Welcome” along with user name. As per the validation is concerned, the program
+should  keep a track of login attempts. After three attempts a message should be flashed saying “Contact Admin”, and the program should terminate.
 
 
 import java.util.Scanner;
@@ -220,7 +240,7 @@ Admin@1
 Welcome Admin
 
 
-
+7.There is an Array which is of the size 15, which may or may not be sorted. You should write a program to accept a number and search if it in contained in the array.
 
 import java.util.Scanner;
 public class LinearSearch {
@@ -281,6 +301,9 @@ Enter the search value
 
 
 
+8. Using the above table write a method apply sorting Bubble Sort.
+
+
 public class BubbleSort {
 	static void bubblesort(int[]arr) {
 		int n = arr.length;
@@ -336,6 +359,8 @@ array After Bubble Sort
 78
 
 
+9.Accept the marks of three students for the subject A,B,C. Find the total scored and the average in all the subjects.
+Also Find theTotal and Average scored by students in each respective Subject.
 
 
 import java.util.Scanner;
