@@ -1,0 +1,420 @@
+1.	Write a Singleton class. Confirm that singleton class cannot be inherited.
+Singleton class is a class that can have only one object at time.
+
+class Student
+{
+	static Student st=new Student();
+	private Student()
+	{
+		System.out.println("This is a SingleTone Class");
+	}
+	static Student getInstance()
+	{
+		return st;
+	}
+}
+
+
+public class first_singletone 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Student s1=Student.getInstance();
+		Student s2=Student.getInstance();
+	}
+
+}
+
+2.Program to describe the hierarchy of an organization. To calculate the salary.
+
+class Employee
+{
+     String name;
+     int salary;
+     Employee()
+     {
+          name = null;
+          salary = 0;
+     }
+     Employee (String name, int salary)
+     {
+          this.name = name;
+          this.salary = salary;
+     }
+     int getSalary()
+     {
+          return salary;
+     }
+}
+class Manager extends Employee
+{
+     int hra, ta, sa;
+     Manager()
+     {
+          super();
+          hra = ta = 0;
+     }
+     Manager(String n, int sal, int h, int t, int x)
+     {
+          super(n, sal);
+          hra = h;
+          ta = t;
+          sa=x;
+     }
+     int getSalary()
+     {
+          return (super.getSalary()+hra+ta+sa);
+     }
+}
+class Labour extends Employee
+{
+     int hra, ta, sal;
+     Labour()
+     {
+          super();
+          hra = ta = 0;
+     }
+     Labour(String n, int sal, int h, int t, int x)
+     {
+          super(n, sal);
+          hra = h;
+          ta = t;
+          sal=x;
+
+     }
+     int gettSalary()
+     {
+          return (super.getSalary()+hra+ta+sal);
+     }
+}
+public class second
+{
+    public static void main(String[] args)
+    {
+
+         Labour l2 = new Labour("",20000,500,1500,5000);
+
+         System.out.println("Total sallary of Employee is= " +l2.gettSalary());
+
+
+    }
+} 
+
+
+3. write program to consider saving and current bank holder.
+
+import java.util.Scanner;
+
+class Savings{
+	public void show(int fd) {
+		System.out.println("Fixed Deposit "+fd);
+	}
+}
+class Current{
+	public void show(int cc) {
+		System.out.println("Cash Credit "+cc);
+	}
+}
+class Totalcash{
+	public void show(int ssal,int csal) {
+		int sum;
+		sum=ssal+csal;
+		System.out.println("Total Cash : "+sum);
+	}
+}
+public class third {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int fdep,ccd;
+		Savings s = new Savings();
+		Current c = new Current();
+		Totalcash tc= new Totalcash();
+
+		 Scanner scanner = new Scanner(System.in);
+		 System.out.println("Note: fd=fixed deposit");
+	     System.out.print("Enter FD for savings account: ");
+	     fdep = scanner.nextInt();
+
+	     System.out.print("Enter Cash credit for Current account: ");
+	     ccd = scanner.nextInt();
+	     s.show(fdep);
+	     c.show(ccd);
+	     tc.show(fdep,ccd);
+
+	}
+
+} 
+
+4.Principle of an abstract class.
+
+(i)abstract class AbstractClass 
+{
+	public void display() 
+   {
+      System.out.print("From Abstract Class");
+   }
+}
+public class fourth extends AbstractClass {
+   public static void main(String args[]) {
+      AbstractClass obj = new fourth();
+      obj.display();
+   }
+} 
+} 
+
+(ii) Class 1= Demo.java
+
+public class demo extends call {
+	public void dispaly2()
+	{
+	
+	System.out.println("HI");
+	}
+	public static void main(String[] args)
+	{
+			
+			demo d= new demo();
+			d.dispaly2();
+			
+			
+		}
+	}
+
+Class 2= Call.java
+
+package abstarct;
+abstract class call {
+ void display()
+{
+	System.out.println("hello");
+}
+}
+
+Output: HI
+
+(iii) Abstarct class cannot be private
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor call() is not visible for default constructor. Must define an explicit constructor
+
+(iv)Abstarct class cannot be final
+   Yes it can’t be a final because final is not a access specifier
+
+(v) you can declare abstract class without abstract method
+ yes we can create abstract class without a method.
+
+
+
+5.Add an abstract draw() method in the class of shapes and draw all the shapes.
+
+abstract class Shape{  
+abstract void draw();  
+}  
+
+class Line extends Shape{  
+void draw(){System.out.println("drawing Line");}  
+}
+class Square extends Shape{  
+void draw(){System.out.println("drawing square");}  
+}
+class Rectangle extends Shape{  
+void draw(){System.out.println("drawing rectangle");}  
+}  
+class Circle extends Shape{  
+void draw(){System.out.println("drawing circle");}  
+}  
+
+class fifth{  
+public static void main(String args[]){  
+Shape s1=new Circle();  
+Shape s2=new Rectangle();
+Shape s3=new Line();
+Shape s4=new Square();
+s1.draw();
+s2.draw();
+s3.draw();
+s4.draw();
+}  
+}
+
+6. Write an abstract class "persistence" along with two sub classes.
+ abstract class Presistence{
+	abstract void presist();
+}
+class FilePresistenece extends Presistence{
+
+	@Override
+	void presist() {
+		// TODO Auto-generated method stub
+		System.out.println("Data Saved in File");
+	}
+
+}
+class DatabasePresistenece extends Presistence{
+
+	@Override
+	void presist() {
+		// TODO Auto-generated method stub
+		System.out.println("Data saved in Database");
+	}
+
+}
+public class sixth extends Presistence{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Presistence obj=new sixth();
+		obj.presist();
+	}
+
+	@Override
+	void presist() {
+		// TODO Auto-generated method stub
+		System.out.println("Presistence method from sixth(class)");
+
+	}
+} 
+
+
+7.Develop a application for desert shop.
+
+import java.util.Arrays;
+import java.util.Scanner;
+abstract class Dessertitem{
+	abstract void getCost();
+}
+class Candy extends Dessertitem{
+
+	@Override
+	void getCost() {
+		// TODO Auto-generated method stub
+		double val=0;
+		int orderqty, amt[]= {5,10,50};
+		double tax=0.3;
+		System.out.println("Tax on Candy dessert : "+tax);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter quantity to place order :");
+		orderqty=sc.nextInt();
+    	val = amt[0]*orderqty*60*tax;
+		System.out.println("Thank you for placing order!! It costs :"+val+" rupees");
+	}
+}
+
+class Cookie extends Dessertitem{
+
+	@Override
+	void getCost() {
+		// TODO Auto-generated method stub
+		double val=0;
+		int orderqty, amt[]= {5,10,50};
+		double tax=0.2;
+		System.out.println("Tax on Cookie dessert : "+tax);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter quantity to place order :");
+		orderqty=sc.nextInt();
+    	val = amt[1]*orderqty*70*tax;
+		System.out.println("Thank you for placing order!! It costs :"+val+" rupees");
+	}
+}
+
+class Icecream extends Dessertitem{
+
+	@Override
+	void getCost() {
+		// TODO Auto-generated method stub
+		double val=0;
+		int orderqty, amt[]= {5,10,50};
+		double tax=0.5;
+		System.out.println("Tax on Icecream dessert : "+tax);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter quantity to place order :");
+		orderqty=sc.nextInt();
+    	val = amt[2]*orderqty*tax;
+		System.out.println("Thank you for placing order!! It costs :"+val+" rupees");
+	}
+}
+
+public class seventh extends Dessertitem{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub  
+		String desserts[]= {"Candy","Cookie","Icecream"};
+		int qty[]= {10,20,15},amt[]= {5,10,50};
+		Dessertitem obj=new seventh(); 
+		Dessertitem can=new Candy();
+		Dessertitem ck=new Cookie();
+		Dessertitem ice=new Icecream();
+		Scanner sc = new Scanner(System.in); 
+		 char ch;
+		 int own;  
+	        do {  
+	            System.out.println("\n ***Dessert Shop Application welcomes you***");  
+	            System.out.println(" a. Owner\n b. Customer\n c. Exit ");  
+	            System.out.print("Press a/b/c: ");  
+	            ch = sc.next().charAt(0);  
+	                switch (ch) {  
+	                    case 'a':  
+	                    	System.out.println("\n ***Owner***");
+	                    	System.out.println("\n ***Dessert you want to add***");  
+	         	            System.out.println("1. Candy\n2. Cookie\n3. Icecream ");
+	         	            System.out.print("Press 1/2/3: ");
+	         	            own=sc.nextInt();
+	         	            if(own==1 || own==2 || own ==3) {
+	         	            	System.out.println(desserts[own-1]+" Available quantity in stock : "+qty[own-1]);
+	         	            	System.out.println("Enter the quantity to add:");
+		                    	qty[own-1]=qty[own-1]+sc.nextInt();
+		                    	System.out.println("Dessert added succesfully");
+		                    	System.out.println("Candy : "+qty[0]+"\nCookie : "+qty[1]+"\nIcecream : "+qty[2]);
+		                    	System.out.println("See you soon...Have a great day!!");
+	         	            }
+	         	            break;
+	                    case 'b':  
+	                    	System.out.println("\n ***Customer Module***");
+	                    	System.out.println("\n ***Dessert you want to place an Order for***");  
+	         	            System.out.println("1. Candy\n2. Cookie\n3.Icecream ");
+	         	            System.out.println("Enter your choice: ");
+	         	            own=sc.nextInt();
+	         	           switch(own) {
+	         	            case 1:
+	         	            	System.out.println("**Candy**");
+		                    	System.out.println("quantity Available: "+qty[own-1]);
+		                    	System.out.println("Each Candy costs : "+amt[own-1]+" in dollars");
+		                    	can.getCost();
+		                    	System.out.println("See you soon...Have a great day!!");
+		                    	break;
+
+	         	           case 2:
+	         	            	System.out.println("**Cookie**");
+		                    	System.out.println("quantity Available: "+qty[own-1]);
+		                    	System.out.println("Each Cookie costs : "+amt[own-1]+" in Euros");
+		                    	ck.getCost();
+		                    	System.out.println("See you soon...Have a great day!!");
+		                    	break;
+
+	         	          case 3:
+	         	        	  	System.out.println("**Icecream**");
+		                    	System.out.println("quantity Available: "+qty[own-1]);
+		                    	System.out.println("Each Icecream costs : "+amt[own-1]+" in Rupees");
+		                    	ice.getCost();
+		                    	System.out.println("See you soon...Have a great day!!");
+		                    	break;
+
+	         	            }
+	                    case 'c':  
+	                        //System.out.println("See you soon...Have a great day!!");  
+	                        break;
+	                }  
+	        }  
+	        while (ch != 3);  
+
+	}
+
+	@Override
+	void getCost() {
+		// TODO Auto-generated method stub
+		System.out.println("From Main class");
+	}
+
+}
